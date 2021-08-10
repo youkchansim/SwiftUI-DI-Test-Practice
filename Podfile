@@ -6,5 +6,13 @@ target 'DI-Test-Practice' do
   use_frameworks!
 
   # Pods for DI-Test-Practice
+  pod 'Swinject'
+  
+end
 
+target 'DI-Test-PracticeTests' do
+  
+  pod 'Swinject'
+  pod 'Quick'
+  pod 'Nimble'
 end
