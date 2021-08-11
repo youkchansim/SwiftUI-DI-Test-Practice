@@ -10,14 +10,14 @@ import Combine
 
 protocol Networking {
     
-    func request(_ request: URLRequest) -> AnyPublisher<Data, URLSession.DataTaskPublisher.Failure>
+    func request(_ request: URLRequest) -> AnyPublisher<Data, Error>
 }
 
-struct HTTPNetworking: Networking {
+struct HTTPNetwork: Networking {
     
-    func request(_ request: URLRequest) -> AnyPublisher<Data, URLSession.DataTaskPublisher.Failure> {
+    func request(_ request: URLRequest) -> AnyPublisher<Data, Error> {
         URLSession.shared.dataTaskPublisher(for: request)
-            .map { $0.data }
+            .tryMap { $0.data }
             .eraseToAnyPublisher()
     }
 }

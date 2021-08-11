@@ -26,7 +26,7 @@ struct DI_Test_PracticeApp: App {
     
     private func prepareContainer() {
         container.register(Networking.self, factory: { _ in
-            HTTPNetworking()
+            HTTPNetwork()
         })
         container.register(GitFetchable.self, factory: { r in
             GitFetcher(networking: r.resolve(Networking.self)!)

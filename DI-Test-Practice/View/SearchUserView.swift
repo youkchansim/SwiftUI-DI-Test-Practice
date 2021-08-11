@@ -49,6 +49,6 @@ class SearchUserViewModel: ObservableObject {
 struct SearchUserView_Previews: PreviewProvider {
 
     static var previews: some View {
-        SearchUserView(viewModel: SearchUserViewModel(gitFetcher: GitFetcher(networking: HTTPNetworking())))
+        SearchUserView(viewModel: SearchUserViewModel(gitFetcher: GitFetcher(networking: HTTPNetwork())))
     }
 }
