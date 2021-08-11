@@ -6,12 +6,43 @@
 //
 
 import SwiftUI
+import Swinject
 
 @main
 struct DI_Test_PracticeApp: App {
+    
+    private let container = Container()
+    
+    init() {
+        prepareContainer()
+    }
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(\.container, container)
         }
+    }
+    
+    private func prepareContainer() {
+        container.register(Networking.self, factory: { _ in
+            HTTPNetworking()
+        })
+        container.register(GitFetchable.self, factory: { r in
+            GitFetcher(networking: r.resolve(Networking.self)!)
+        })
+    }
+}
+
+private struct ContainerKey: EnvironmentKey {
+
+    static let defaultValue: Container = Container()
+}
+
+extension EnvironmentValues {
+    
+    var container: Container {
+        get { self[ContainerKey.self] }
+        set { self[ContainerKey.self] = newValue }
     }
 }

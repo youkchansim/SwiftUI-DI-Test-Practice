@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @Environment(\.container) private var container
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        SearchUserView(viewModel: SearchUserViewModel(gitFetcher: container.resolve(GitFetchable.self)!))
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
+
     static var previews: some View {
         ContentView()
     }

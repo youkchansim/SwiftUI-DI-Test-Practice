@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,10 @@
 		E9034EBB26C297F400CC7FD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9034EBA26C297F400CC7FD2 /* Assets.xcassets */; };
 		E9034EBE26C297F400CC7FD2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9034EBD26C297F400CC7FD2 /* Preview Assets.xcassets */; };
 		E913775026C29C1B0053BC96 /* DI_Test_PracticeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E913774F26C29C1B0053BC96 /* DI_Test_PracticeTests.swift */; };
+		E913775A26C2AE510053BC96 /* GitFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E913775926C2AE510053BC96 /* GitFetcher.swift */; };
+		E913775C26C2AE860053BC96 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E913775B26C2AE860053BC96 /* User.swift */; };
+		E913776126C2AFD60053BC96 /* SearchUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E913776026C2AFD60053BC96 /* SearchUserView.swift */; };
+		E913776326C2CE130053BC96 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E913776226C2CE130053BC96 /* Networking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +46,10 @@
 		E913774D26C29C1A0053BC96 /* DI-Test-PracticeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DI-Test-PracticeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E913774F26C29C1B0053BC96 /* DI_Test_PracticeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DI_Test_PracticeTests.swift; sourceTree = "<group>"; };
 		E913775126C29C1B0053BC96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E913775926C2AE510053BC96 /* GitFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitFetcher.swift; sourceTree = "<group>"; };
+		E913775B26C2AE860053BC96 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E913776026C2AFD60053BC96 /* SearchUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserView.swift; sourceTree = "<group>"; };
+		E913776226C2CE130053BC96 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +115,9 @@
 		E9034EB526C297F300CC7FD2 /* DI-Test-Practice */ = {
 			isa = PBXGroup;
 			children = (
+				E913775826C2AD830053BC96 /* Model */,
+				E913775726C2AD7E0053BC96 /* Network */,
+				E913775D26C2AFBB0053BC96 /* View */,
 				E9034EB626C297F300CC7FD2 /* DI_Test_PracticeApp.swift */,
 				E9034EB826C297F300CC7FD2 /* ContentView.swift */,
 				E9034EBA26C297F400CC7FD2 /* Assets.xcassets */,
@@ -131,6 +142,31 @@
 				E913775126C29C1B0053BC96 /* Info.plist */,
 			);
 			path = "DI-Test-PracticeTests";
+			sourceTree = "<group>";
+		};
+		E913775726C2AD7E0053BC96 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E913776226C2CE130053BC96 /* Networking.swift */,
+				E913775926C2AE510053BC96 /* GitFetcher.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		E913775826C2AD830053BC96 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E913775B26C2AE860053BC96 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E913775D26C2AFBB0053BC96 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E913776026C2AFD60053BC96 /* SearchUserView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,7 +335,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E913775C26C2AE860053BC96 /* User.swift in Sources */,
 				E9034EB926C297F300CC7FD2 /* ContentView.swift in Sources */,
+				E913776326C2CE130053BC96 /* Networking.swift in Sources */,
+				E913776126C2AFD60053BC96 /* SearchUserView.swift in Sources */,
+				E913775A26C2AE510053BC96 /* GitFetcher.swift in Sources */,
 				E9034EB726C297F300CC7FD2 /* DI_Test_PracticeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
