@@ -38,6 +38,7 @@ class SearchUserViewModel: ObservableObject {
             .flatMap { query in
                 gitFetcher.searchUsers(query: query)
             }
+            .receive(on: RunLoop.main)
             .sink(receiveValue: { [weak self] users in
                 self?.users = users
             })
